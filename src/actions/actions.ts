@@ -1,58 +1,14 @@
-// import { Dispatch } from 'redux';
 import { ActionTypes } from './types';
 
-// State Interfaces
-export interface Pawn {
-  pawnID: number;
-  isSafe: boolean;
-  moves: number;
-}
+import {
+  IncrementMoveAction,
+  SetGameMessageAction,
+  NextPlayerAction,
+  RollTheDiceAction,
+  NewRoundAction,
+  GrantMoveAccessAction
+} from './interfaces/actionsInterfaces';
 
-export interface Player {
-  userID: number;
-  pawns: Pawn[];
-  isActive: boolean;
-}
-
-export interface GameState {
-  currentActivePlayer: number;
-  currentActivePawn: number;
-  currentSelectedPlayer: number;
-  currentDiceRoll: number;
-  gameMessage: string;
-  players: Player[];
-}
-
-/// Action Interfaces
-export interface IncrementMoveAction {
-  type: ActionTypes.incrementMove;
-  payload: number[];
-}
-
-export interface SetGameMessageAction {
-  type: ActionTypes.setGameMessage;
-  payload: string;
-}
-
-export interface NextPlayerAction {
-  type: ActionTypes.nextPlayer;
-}
-
-export interface RollTheDiceAction {
-  type: ActionTypes.rollTheDice;
-  payload: number;
-}
-
-export interface NewRoundAction {
-  type: ActionTypes.newRound;
-}
-
-export interface GrantMoveAccessAction {
-  type: ActionTypes.grantMoveAccess;
-  payload: number;
-}
-
-/// Actions
 export const incrementMove = (id: number[]): IncrementMoveAction => {
   console.log(id);
   id.map(item => typeof item === 'string' && parseInt(item));

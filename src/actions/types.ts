@@ -5,7 +5,7 @@ import {
   RollTheDiceAction,
   NewRoundAction,
   GrantMoveAccessAction
-} from './actions';
+} from './interfaces/actionsInterfaces';
 
 export enum ActionTypes {
   incrementMove,
