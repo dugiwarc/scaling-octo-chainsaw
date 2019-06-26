@@ -6,7 +6,14 @@ import {
   NextPlayerAction,
   RollTheDiceAction,
   NewRoundAction,
-  GrantMoveAccessAction
+  GrantMoveAccessAction,
+  SelectPawnAction,
+  UpdatePawnAction,
+  ValidatePawnAction,
+  // SwitchStateAction,
+  RemoveSafetyAction,
+  GrantSafetyAction,
+  AddOccupiedTileAction
 } from './interfaces/actionsInterfaces';
 
 export const incrementMove = (id: number[]): IncrementMoveAction => {
@@ -49,5 +56,45 @@ export const grantMoveAccess = (id: number): GrantMoveAccessAction => {
   return {
     type: ActionTypes.grantMoveAccess,
     payload: id
+  };
+};
+
+export const selectPawn = (id: number): SelectPawnAction => {
+  return {
+    type: ActionTypes.selectPawn,
+    payload: id
+  };
+};
+
+export const updatePawn = (id: number): UpdatePawnAction => {
+  return {
+    type: ActionTypes.updatePawn,
+    payload: id
+  };
+};
+
+export const validatePawn = (id: string): ValidatePawnAction => {
+  return {
+    type: ActionTypes.validatePawn,
+    payload: id
+  };
+};
+
+export const grantSafetyStatus = (): GrantSafetyAction => {
+  return {
+    type: ActionTypes.grantSafetyStatus
+  };
+};
+
+export const removeSafetyStatus = (): RemoveSafetyAction => {
+  return {
+    type: ActionTypes.removeSafetyStatus
+  };
+};
+
+export const addPosition = (position: string): AddOccupiedTileAction => {
+  return {
+    type: ActionTypes.addPosition,
+    payload: position
   };
 };

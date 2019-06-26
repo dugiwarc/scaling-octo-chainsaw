@@ -4,7 +4,14 @@ import {
   SetGameMessageAction,
   RollTheDiceAction,
   NewRoundAction,
-  GrantMoveAccessAction
+  GrantMoveAccessAction,
+  SelectPawnAction,
+  UpdatePawnAction,
+  ValidatePawnAction,
+  SwitchStateAction,
+  GrantSafetyAction,
+  RemoveSafetyAction,
+  AddOccupiedTileAction
 } from './interfaces/actionsInterfaces';
 
 export enum ActionTypes {
@@ -13,13 +20,27 @@ export enum ActionTypes {
   setGameMessage,
   rollTheDice,
   newRound,
-  grantMoveAccess
+  grantMoveAccess,
+  switchState,
+  selectPawn,
+  updatePawn,
+  validatePawn,
+  grantSafetyStatus,
+  removeSafetyStatus,
+  addPosition
 }
 
 export type Action =
   | IncrementMoveAction
   | NextPlayerAction
+  | SwitchStateAction
+  | UpdatePawnAction
   | NewRoundAction
+  | AddOccupiedTileAction
+  | ValidatePawnAction
+  | GrantSafetyAction
+  | RemoveSafetyAction
   | SetGameMessageAction
+  | SelectPawnAction
   | RollTheDiceAction
   | GrantMoveAccessAction;

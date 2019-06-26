@@ -4,11 +4,6 @@ export const row: {} = {
   height: '33%',
   display: 'flex'
 };
-export const horizontalTiles: {} = {
-  width: '40%',
-  height: '100%',
-  backgroundColor: 'green'
-};
 
 export const cell: {} = {
   border: 'solid white 1px',
@@ -16,27 +11,10 @@ export const cell: {} = {
   width: '100%'
 };
 
-export const verticalTiles: {} = {
-  width: '20%',
-  height: '100%',
-  backgroundColor: 'green',
-  display: 'flex',
-  flexDirection: 'column'
-};
 export const column: {} = {
   display: 'flex',
   width: '100%',
   height: '17%'
-};
-export const pawn: {} = {
-  height: '20px',
-  color: 'white',
-  width: '20px',
-  margin: '1px',
-  borderRadius: '15px',
-  border: '1px solid black',
-  transition: '.3s ease-in-out',
-  backgroundColor: 'black'
 };
 export const player: {} = {
   width: '40%',
@@ -53,13 +31,17 @@ export const dashboard: {} = {
   flexDirection: 'column'
 };
 
-export const mainBoard: {} = {
+export const root: {} = {
   display: 'flex',
-  height: '350px',
-  width: '350px',
-  flexWrap: 'wrap',
-  justifyContent: 'space-between',
-  boxSizing: 'border-box'
+  backgroundColor: 'steelBlue'
+};
+
+export const mainBoard: {} = {
+  // display: 'flex',
+  // flexWrap: 'wrap',
+  // width: '502px',
+  // justifyContent: 'space-between',
+  // boxSizing: 'border-box'
 };
 
 export const top: {} = {
@@ -86,4 +68,56 @@ export const square: {} = {
 
 export const status: {} = {
   color: 'green'
+};
+
+export const tile: {} = {
+  width: '30px',
+  height: '30px',
+  backgroundColor: 'wheat',
+  boxSizing: 'border-box',
+  border: '0.1px solid gray'
+};
+
+export const emptyTile: {} = {
+  width: '30px',
+  height: '30px',
+  textAlign: 'center'
+};
+
+export const pawn: {} = {
+  width: '28px',
+  height: '28px',
+  display: 'flex',
+  justifyContent: 'center',
+  backgroundColor: 'transparent',
+  alignItems: 'center',
+  borderRadius: '15px',
+  border: '0.1px solid gray'
+};
+
+export const horizontalLine: {} = {
+  display: 'flex',
+  width: '500px'
+};
+
+export const ludoTile: {} = {
+  width: '30px',
+  height: '30px',
+  backgroundColor: 'pink',
+  boxSizing: 'border-box',
+  border: '0.1px solid gray'
+};
+
+export const boxShadow: {} = {
+  boxShadow: '0 8px 6px -6px black'
+};
+
+export const dummy: {} = {};
+
+export const safeLudoTile: {} = {
+  width: '30px',
+  height: '30px',
+  backgroundColor: 'yellowgreen',
+  boxSizing: 'border-box',
+  border: '0.1px solid gray'
 };

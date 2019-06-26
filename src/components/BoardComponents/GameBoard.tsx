@@ -1,21 +1,33 @@
-import React, { Fragment } from 'react';
-import PlayerBoard from './PlayerBoard';
+import React from 'react';
+import Pawn from './Pawn';
+import Tile from './Tile';
+import EmptyTile from './EmptyTile';
 import GameStats from './GameStats';
 import GameLog from './GameLog';
-import VerticalTile from './VerticalTile';
 import Buttons from './Buttons';
-import HorizontalTile from './HorizontalTile';
-import { mainBoard, mid, bottom, top, square } from '../styles/';
+import ButtonMenu from './ButtonMenu';
+import { horizontalLine } from '../styles/';
+import DiceSpinner from './DiceSpinner';
+import uuid from 'uuid/v4';
+import { walkingTiles } from './walkingTiles';
 
 interface AppProps {
   startGame: Function;
   gameMessage: string;
   isDisabledStart: boolean;
   isDisabledRoll: boolean;
+  isDisabledMenu: boolean;
   rollTheDice: Function;
   currentDiceRoll: number;
   currentPlayer: number;
   roundsPlayed: number;
+  rollDiceForMove: Function;
+  selectPawn: Function;
+  selectedPawn: number;
+  isDisabledRollForMoves: boolean;
+  gameStarted: boolean;
+  selectingPhase: boolean;
+  setGameMessage: Function;
 }
 
 class GameBoard extends React.Component<AppProps> {
@@ -25,44 +37,72 @@ class GameBoard extends React.Component<AppProps> {
       gameMessage,
       isDisabledStart,
       isDisabledRoll,
+      isDisabledMenu,
       rollTheDice,
       currentDiceRoll,
       currentPlayer,
-      roundsPlayed
+      roundsPlayed,
+      rollDiceForMove,
+      selectPawn,
+      selectedPawn,
+      isDisabledRollForMoves,
+      gameStarted,
+      selectingPhase,
+      setGameMessage
     } = this.props;
+
     return (
-      <Fragment>
-        <div style={mainBoard}>
-          <div style={top}>
-            <PlayerBoard />
-            <VerticalTile />
-            <PlayerBoard />
+      <div className='mother'>
+        <div className='ludo'>
+          <GameStats
+            gameMessage={gameMessage}
+            currentDiceRoll={currentDiceRoll}
+            currentPlayer={currentPlayer}
+            roundsPlayed={roundsPlayed}
+            selectedPawn={selectedPawn}
+          />
+          <div className='mainboard'>
+            {walkingTiles.map(row => (
+              <div key={uuid()} style={horizontalLine}>
+                {row.map(tile => {
+                  if (tile > 0) {
+                    return <Pawn identifier={tile} key={uuid()} />;
+                  } else if (tile === 0) {
+                    return <EmptyTile key={uuid()} />;
+                  } else {
+                    return <Tile key={uuid()} type={tile} />;
+                  }
+                })}
+              </div>
+            ))}
           </div>
-          <div style={mid}>
-            <HorizontalTile />
-            <div style={square} />
-            <HorizontalTile />
-          </div>
-          <div style={bottom}>
-            <PlayerBoard />
-            <VerticalTile />
-            <PlayerBoard />
-          </div>
+          <GameLog
+            gameMessage={gameMessage}
+            currentDiceRoll={currentDiceRoll}
+          />
         </div>
-        <GameStats
-          gameMessage={gameMessage}
+        <DiceSpinner
+          isDisabledRoll={isDisabledRoll}
+          gameStarted={gameStarted}
           currentDiceRoll={currentDiceRoll}
+          selectingPhase={selectingPhase}
+        />
+        {/* Pawn Menu */}
+        <ButtonMenu
           currentPlayer={currentPlayer}
-          roundsPlayed={roundsPlayed}
+          isDisabledMenu={isDisabledMenu}
+          selectPawn={selectPawn}
         />
         <Buttons
           startGame={startGame}
           isDisabledStart={isDisabledStart}
           isDisabledRoll={isDisabledRoll}
           rollTheDice={rollTheDice}
+          rollDiceForMove={rollDiceForMove}
+          isDisabledRollForMoves={isDisabledRollForMoves}
+          setGameMessage={setGameMessage}
         />
-        <GameLog gameMessage={gameMessage} currentDiceRoll={currentDiceRoll} />
-      </Fragment>
+      </div>
     );
   }
 }

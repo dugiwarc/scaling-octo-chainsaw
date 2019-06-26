@@ -27,3 +27,35 @@ export interface GrantMoveAccessAction {
   type: ActionTypes.grantMoveAccess;
   payload: number;
 }
+
+export interface SelectPawnAction {
+  type: ActionTypes.selectPawn;
+  payload: number;
+}
+
+export interface UpdatePawnAction {
+  type: ActionTypes.updatePawn;
+  payload: number;
+}
+
+export interface ValidatePawnAction {
+  type: ActionTypes.validatePawn;
+  payload: string;
+}
+
+export interface SwitchStateAction {
+  type: ActionTypes.switchState;
+}
+
+export interface GrantSafetyAction {
+  type: ActionTypes.grantSafetyStatus;
+}
+
+export interface RemoveSafetyAction {
+  type: ActionTypes.removeSafetyStatus;
+}
+
+export interface AddOccupiedTileAction {
+  type: ActionTypes.addPosition;
+  payload: string;
+}
