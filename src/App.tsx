@@ -3,7 +3,7 @@ import Title from './BoardComponents/Title';
 import store from '../store';
 import { connect } from 'react-redux';
 import { StoreState } from '../reducers/index';
-import { walkingTiles } from '../components/BoardComponents/walkingTiles';
+import { walkingTiles } from './BoardComponents/walkingTiles';
 import {
   GameState,
   nextPlayer,
