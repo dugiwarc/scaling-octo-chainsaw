@@ -321,7 +321,7 @@ class App extends React.Component<AppProps, AppState> {
       if (safeTiles.includes(coords.toString())) {
         this.props.grantSafetyStatus();
       } else {
-        this.props.grantSafetyStatus();
+        this.props.removeSafetyStatus();
       }
 
       console.log('Previous position coords for selected pawn', previousCoords);
