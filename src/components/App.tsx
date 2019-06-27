@@ -163,6 +163,9 @@ class App extends React.Component<AppProps, AppState> {
     let threshold: boolean = true;
     switch (id) {
       case '1':
+      case '2':
+      case '3':
+      case '4':
         if (moves > coordinates.length - this.state.p1Completed) {
           threshold = false;
           if (!this.state.p1CompletedStatus)
@@ -182,112 +185,10 @@ class App extends React.Component<AppProps, AppState> {
           return output[0];
         }
         return coordinates[56 - this.state.p1Completed];
-      case '2':
-        if (moves > coordinates.length - this.state.p1Completed) {
-          threshold = false;
-          this.setState({
-            p1Completed: this.state.p1Completed + 1
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          return coordinates[56 - this.state.p1Completed];
-        }
-        if (threshold) {
-          output = coordinates.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinates[56 - this.state.p1Completed];
-      case '3':
-        if (moves > coordinates.length - this.state.p1Completed) {
-          threshold = false;
-          this.setState({
-            p1Completed: this.state.p1Completed + 1
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          return coordinates[56 - this.state.p1Completed];
-        }
-        if (threshold) {
-          output = coordinates.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinates[56 - this.state.p1Completed];
-      case '4':
-        if (moves > coordinates.length - this.state.p1Completed) {
-          threshold = false;
-          return coordinates[56 - this.state.p1Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p1Completed: this.state.p1Completed + 1,
-            p1CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinates.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinates[56 - this.state.p1Completed];
+
       case '5':
-        if (moves > coordinatesP2.length - this.state.p2Completed) {
-          threshold = false;
-          return coordinatesP2[56 - this.state.p2Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p2Completed: this.state.p2Completed + 1,
-            p2CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP2.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP2[56 - this.state.p2Completed];
       case '6':
-        if (moves > coordinatesP2.length - this.state.p2Completed) {
-          threshold = false;
-          return coordinatesP2[56 - this.state.p2Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p2Completed: this.state.p2Completed + 1,
-            p2CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP2.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP2[56 - this.state.p2Completed];
       case '7':
-        if (moves > coordinatesP2.length - this.state.p2Completed) {
-          threshold = false;
-          return coordinatesP2[56 - this.state.p2Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p2Completed: this.state.p2Completed + 1,
-            p2CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP2.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP2[56 - this.state.p2Completed];
       case '8':
         if (moves > coordinatesP2.length - this.state.p2Completed) {
           threshold = false;
@@ -308,59 +209,8 @@ class App extends React.Component<AppProps, AppState> {
         return coordinatesP2[56 - this.state.p2Completed];
 
       case '9':
-        if (moves > coordinatesP3.length - this.state.p3Completed) {
-          threshold = false;
-          return coordinatesP3[56 - this.state.p3Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p3Completed: this.state.p3Completed + 1,
-            p3CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP3.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP3[56];
       case '10':
-        if (moves > coordinatesP3.length - this.state.p3Completed) {
-          threshold = false;
-          return coordinatesP3[56 - this.state.p3Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p3Completed: this.state.p3Completed + 1,
-            p3CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP3.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP3[56];
       case '11':
-        if (moves > coordinatesP3.length - this.state.p3Completed) {
-          threshold = false;
-          return coordinatesP3[56 - this.state.p3Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p3Completed: this.state.p3Completed + 1,
-            p3CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP3.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP3[56];
       case '12':
         if (moves > coordinatesP3.length - this.state.p3Completed) {
           threshold = false;
@@ -378,61 +228,11 @@ class App extends React.Component<AppProps, AppState> {
           output = coordinatesP3.filter((coord, i) => i + 1 === moves);
           return output[0];
         }
-        return coordinatesP3[56 - this.state.p3Completed];
+        return coordinatesP3[56];
+
       case '13':
-        if (moves > coordinatesP4.length - this.state.p4Completed) {
-          threshold = false;
-          return coordinatesP4[56 - this.state.p4Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p4Completed: this.state.p4Completed + 1,
-            p4CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP4.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP4[56];
       case '14':
-        if (moves > coordinatesP4.length - this.state.p4Completed) {
-          threshold = false;
-          return coordinatesP4[56 - this.state.p4Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p4Completed: this.state.p4Completed + 1,
-            p4CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP4.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP4[56];
       case '15':
-        if (moves > coordinatesP4.length - this.state.p4Completed) {
-          threshold = false;
-          return coordinatesP4[56 - this.state.p4Completed];
-        }
-        if (threshold) {
-          this.setState({
-            p4Completed: this.state.p4Completed + 1,
-            p4CompletedStatus: true
-          });
-          setGameMessage('Select another pawn!');
-          this.setState({
-            gameMessage: store.getState().gamestate.gameMessage
-          });
-          output = coordinatesP4.filter((coord, i) => i + 1 === moves);
-          return output[0];
-        }
-        return coordinatesP4[56];
       case '16':
         if (moves > coordinatesP4.length - this.state.p4Completed) {
           threshold = false;
