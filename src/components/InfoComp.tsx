@@ -1,5 +1,4 @@
 import React from 'react';
-import { status } from '../styles/';
 
 interface AppProps {
   title: string;
@@ -12,7 +11,7 @@ class InfoComp extends React.Component<AppProps> {
     return (
       <div>
         {title}
-        <span style={status}>{output}</span>
+        <span className='status'>{output}</span>
       </div>
     );
   }

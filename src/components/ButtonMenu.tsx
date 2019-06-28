@@ -1,6 +1,5 @@
 import React from 'react';
 import uuid from 'uuid/v4';
-import { boxShadow, dummy } from '../styles';
 
 interface AppProps {
   currentPlayer: number;
@@ -34,7 +33,8 @@ class ButtonMenu extends React.Component<AppProps> {
             key={uuid()}
             disabled={isDisabledMenu}
             onClick={handleClick}
-            style={!isDisabledMenu ? boxShadow : dummy}
+            // style={!isDisabledMenu ? boxShadow : dummy}
+            className={!isDisabledMenu ? 'box-shadow' : 'dummy'}
           >
             {pawn}
           </button>

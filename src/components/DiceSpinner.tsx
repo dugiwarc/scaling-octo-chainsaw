@@ -1,10 +1,10 @@
 import React from 'react';
-import face_1 from '../../graphics/1.png';
-import face_2 from '../../graphics/2.png';
-import face_3 from '../../graphics/3.png';
-import face_4 from '../../graphics/4.png';
-import face_5 from '../../graphics/5.png';
-import face_6 from '../../graphics/6.png';
+import face_1 from '../assets/graphics/1.png';
+import face_2 from '../assets/graphics/2.png';
+import face_3 from '../assets/graphics/3.png';
+import face_4 from '../assets/graphics/4.png';
+import face_5 from '../assets/graphics/5.png';
+import face_6 from '../assets/graphics/6.png';
 
 interface AppProps {
   isDisabledRoll: boolean;

@@ -1,9 +1,9 @@
 import React from 'react';
-import Title from './components/BoardComponents/Title';
+import Title from './components/Title';
 import store from './store';
 import { connect } from 'react-redux';
 import { StoreState } from './reducers/index';
-import { walkingTiles } from './components/BoardComponents/walkingTiles';
+import { walkingTiles } from './components/coordinates/walkingTiles';
 import {
   GameState,
   nextPlayer,
@@ -19,14 +19,14 @@ import {
   addPosition
 } from './actions';
 
-import GameBoard from './components/BoardComponents/GameBoard';
+import GameBoard from './components/GameBoard';
 import {
   coordinates,
   coordinatesP2,
   coordinatesP3,
   coordinatesP4
-} from './components/BoardComponents/coordinates';
-const sound: any = require('./components/sounds/ludo.mp3');
+} from './components/coordinates/coordinates';
+const sound: any = require('./assets/sounds/ludo.mp3');
 export interface AppState {
   isDisabledStart: boolean;
   isDisabledRoll: boolean;

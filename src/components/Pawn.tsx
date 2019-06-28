@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import { pawn } from '../styles/';
-import pawnImage from '../../graphics/pawn.png';
-import '../../index.css';
+import pawnImage from '../assets/graphics/pawn.png';
 
 interface AppProps {
   identifier: number;

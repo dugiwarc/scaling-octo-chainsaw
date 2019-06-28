@@ -6,10 +6,9 @@ import GameStats from './GameStats';
 import GameLog from './GameLog';
 import Buttons from './Buttons';
 import ButtonMenu from './ButtonMenu';
-import { horizontalLine } from '../styles/';
 import DiceSpinner from './DiceSpinner';
 import uuid from 'uuid/v4';
-import { walkingTiles } from './walkingTiles';
+import { walkingTiles } from './../components/coordinates/walkingTiles';
 
 interface AppProps {
   startGame: Function;
@@ -63,7 +62,7 @@ class GameBoard extends React.Component<AppProps> {
           />
           <div className='mainboard'>
             {walkingTiles.map(row => (
-              <div key={uuid()} style={horizontalLine}>
+              <div key={uuid()} className='horizontal-line'>
                 {row.map(tile => {
                   if (tile > 0) {
                     return <Pawn identifier={tile} key={uuid()} />;

@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+root {
+  --main-tile-width: 30px;
+  --main-tile-height: 30px;
+}
+
 body {
   margin-top: 100px;
   position: absolute;
@@ -122,6 +128,55 @@ h1 span:nth-child(4) {
   animation-delay: 0.3s;
 }
 
+.box-shadow {
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.dummy {
+  width: var(--main-tile-width);
+  height: var(--main-tile-height);
+  border: 0.1px solid gray;
+}
+
+.status {
+  color: green;
+}
+
+.empty-tile {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+.ludo-tile {
+  width: 30px;
+  height: 30px;
+  background-color: pink;
+  box-sizing: border-box;
+  border: 0.1px solid gray;
+}
+
+.safe-ludo-tile {
+  width: 30px;
+  height: 30px;
+  background-color: yellowgreen;
+  box-sizing: border-box;
+  border: 0.1px solid gray;
+}
+
+.tile {
+  width: 30px;
+  height: 30px;
+  background-color: wheat;
+  box-sizing: border-box;
+  border: 0.1px solid gray;
+}
+
+.horizontal-line {
+  display: flex;
+  width: 500px;
+}
+
 @keyframes bounce {
   100% {
     top: -20px;
@@ -143,31 +198,31 @@ h1 span:nth-child(4) {
 
 @keyframes spinner-animation {
   0% {
-    background-image: url('./graphics/1.png');
+    background-image: url('./assets/graphics/1.png');
     background-size: 50px;
   }
   15% {
-    background-image: url('./graphics/2.png');
+    background-image: url('./assets/graphics/2.png');
     background-size: 50px;
   }
   30% {
-    background-image: url('./graphics/3.png');
+    background-image: url('./assets/graphics/3.png');
     background-size: 50px;
   }
   45% {
-    background-image: url('./graphics/4.png');
+    background-image: url('./assets/graphics/4.png');
     background-size: 50px;
   }
   60% {
-    background-image: url('./graphics/5.png');
+    background-image: url('./assets/graphics/5.png');
     background-size: 50px;
   }
   75% {
-    background-image: url('./graphics/6.png');
+    background-image: url('./assets/graphics/6.png');
     background-size: 50px;
   }
   100% {
-    background-image: url('./graphics/1.png');
+    background-image: url('./assets/graphics/1.png');
     background-size: 50px;
   }
 }

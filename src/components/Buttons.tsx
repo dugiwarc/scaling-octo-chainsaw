@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { boxShadow, dummy } from '../styles/';
-
 interface AppProps {
   startGame: Function;
   isDisabledStart: boolean;
@@ -38,7 +36,7 @@ class Buttons extends React.Component<AppProps> {
       <div>
         <button
           onClick={() => startGame()}
-          style={!isDisabledStart ? boxShadow : dummy}
+          className={!isDisabledStart ? 'box-shadow' : 'dummy'}
           disabled={isDisabledStart}
         >
           Start Game
@@ -46,14 +44,14 @@ class Buttons extends React.Component<AppProps> {
         <button
           onClick={() => rollTheDice()}
           disabled={isDisabledRoll}
-          style={!isDisabledRoll ? boxShadow : dummy}
+          className={!isDisabledRoll ? 'box-shadow' : 'dummy'}
         >
           Roll
         </button>
         <button
           onClick={rollForMoves}
           disabled={isDisabledRollForMoves}
-          style={!isDisabledRollForMoves ? boxShadow : dummy}
+          className={!isDisabledRollForMoves ? 'box-shadow' : 'dummy'}
         >
           Roll for moves
         </button>
